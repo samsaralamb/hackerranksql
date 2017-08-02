@@ -1,0 +1,10 @@
+SELECT DISTINCT CITY FROM STATION
+WHERE CITY NOT LIKE '%[aeiou]';
+/*answer2
+SELECT DISTINCT CITY FROM STATION
+WHERE CITY LIKE '%[^aeiou]';
+*/
+/*
+also you can use left(city, 1), right(city,1) keyword. 
+
+*/
