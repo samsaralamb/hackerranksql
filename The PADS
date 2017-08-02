@@ -1,0 +1,14 @@
+/*
+Enter your query here.
+Please append a semicolon ";" at the end of the query and enter your query in a single line to avoid error.
+*/ 
+/*if in oracle + should be replaced by concat()*, SQL SERVER 2012 ALSO has concat() keyword, the advantage of concat(xx,xx ) is
+从上面的实例中我们可以看到CONCAT的两个优点：
+      1.当数据类型不一致的时候可以自动转换；!!!!!!!! this is why the second select we can only use concat, because + cannot converse the data typle between string and int. but concat() can 
+      2.对于null的处理，不用isnull也可以避免因拼接而导致结果为null的情况。
+*/
+SELECT Name + '(' + UPPER(LEFT(Occupation, 1)) + ')' AS NAME FROM OCCUPATIONS
+ORDER BY Name
+SELECT CONCAT('There are a total of ', COUNT(Occupation),' ', LOWER(Occupation) ,'s.' ) AS TOTAL FROM OCCUPATIONS
+GROUP BY Occupation
+ORDER BY TOTAL;
